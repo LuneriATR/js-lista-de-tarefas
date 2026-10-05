@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <header class="flex justify-between items-center py-4 px-15 bg-gradient-to-r from-rose-600 to-indigo-400">
+        <input class="h-10 pl-4 rounded bg-purple-200" type="text" placeholder="Pesquisar"/>
+        <button class="leading-10 bg-rose-700 rounded px-4 font-bold text-white duration-200 hover:bg-rose-900 hover:text-black">Nova Tarefa</button>
+    </header>
+
+    <main class="p-15 bg-purple-200">
+        <h1 class="text-3xl font-bold mb-6">Tarefas</h1>
+        <div id="tarefas" class="grid grid-cols-3 gap-4">
+            <div class="bg-white p-4 rounded-lg">
+                <h3>Título do card</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus repudiandae voluptas tempora magnam aperiam magni! Recusandae perspiciatis illum earum incidunt, et rerum numquam. Maxime expedita recusandae dolorem! Culpa, consequuntur ea.</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="index.js"></script>
+</body>
+</html>
