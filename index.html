@@ -6,22 +6,22 @@
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
-    <header class="flex justify-between items-center py-4 px-15 bg-gradient-to-r from-rose-600 to-indigo-400">
-        <input class="h-10 pl-4 rounded bg-purple-200" type="text" placeholder="Pesquisar"/>
-        <button class="leading-10 bg-rose-700 rounded px-4 font-bold text-white duration-200 hover:bg-rose-900 hover:text-black">Nova Tarefa</button>
-    </header>
 
-    <main class="p-15 bg-purple-200">
-        <h1 class="text-3xl font-bold mb-6">Tarefas</h1>
-        <div id="tarefas" class="grid grid-cols-3 gap-4">
-            <div class="bg-white p-4 rounded-lg">
-                <h3>Título do card</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus repudiandae voluptas tempora magnam aperiam magni! Recusandae perspiciatis illum earum incidunt, et rerum numquam. Maxime expedita recusandae dolorem! Culpa, consequuntur ea.</p>
-            </div>
-        </div>
-    </main>
+<body class="bg-gradient-to-b from-violet-700 to-rose-200 h-screen flex justify-center items-center">
+    <div class="bg-white shadow-lg rounded-lg px-4">
+        <h1 class="font-bold text-xl mb-6 my-4">Seja bem vindo(a).</h1>
+        <form class="flex flex-col w-80">
+            <label class="uppercase text-xs font-bold mb-2 block" for="email">Email</label>
+            <input class="pl-3 h-10 border-2 border-violet-200 focus:border-purple-400  duration-150 rounded outline-none mb-4" type="email" placeholder="email@email.com"/>
 
-    <script src="index.js"></script>
+            <label for="senha" class="uppercase text-xs font-bold mb-2 block">Senha</label>
+            <input type="password" placeholder="********" class="pl-3 h-10 border-2 border-violet-200 focus:border-purple-400  duration-150 rounded outline-none mb-4"/>
+
+            <a href="/cadastrar.html" class="my-5">Cadastre-se</a>
+            <button type="submit" class="w-full h-10 rounded bg-purple-400 hover:bg-indigo-600 duration-200 hover:text-white mb-4">Login</button>
+        </form>
+    </div>
+    
 </body>
+
 </html>
