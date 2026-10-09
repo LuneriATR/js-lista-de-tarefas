@@ -11,10 +11,13 @@
 
 <body>
     <header class="flex justify-between items-center py-4 px-15 bg-gradient-to-r from-violet-600 to-rose-200">
-        <input class="h-10 pl-4 rounded bg-white outline-none" type="text" placeholder="Pesquisar" />
-        <button onclick="abrirFormCriar()"
-            class="leading-10 bg-white rounded px-4 font-bold text-black duration-200 hover:bg-violet-400 hover:text-white">
-            Nova Tarefa</button>
+        <div class="flex gap-4 items-center">
+        <img src="images\logo.jpg" alt="logo" class="size-20 rounded-lg">
+        <h1 class="text-5xl">Annotes</h1>
+        </div>
+
+        <input onkeyup="pesquisarTarefas(even.target.value)" class="h-10 w-80 pl-4 rounded bg-white outline-none" type="text" placeholder="Pesquisar"/>
+        <button onclick="abrirFormCriar()" class="leading-10 bg-white rounded px-4 font-bold text-black duration-200 hover:bg-violet-400 hover:text-white">Nova Tarefa</button>
     </header>
 
     <main class="p-15 bg-white">
@@ -22,10 +25,9 @@
         <h1 class="text-4xl font-bold mb-6 text-blue-400">Tarefas</h1>
         <div id="tarefas" class="grid grid-cols-3 gap-4"></div>
 
-        <div id="overlay" class="w-full h-screen bg-black/70 fixed top-0 left-0 invisible duration-200"></div>
+        <div id="overlay" onclick="fecharFormCriar(), fecharFormEditar()" class="w-full h-screen bg-black/70 fixed top-0 left-0 invisible duration-200"></div>
 
-        <div id="form-criar"
-            class="w-100 p-4 rounded-lg bg-rose-100 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 invisible duration-200 delay-200">
+        <div id="form-criar" class="w-100 p-4 rounded-lg bg-violet-100 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 invisible duration-200 delay-200">
 
             <div class="flex justify-end">
                 <box-icon onclick="fecharFormCriar()" name='x-circle' class="cursor-pointer"></box-icon>
@@ -37,9 +39,10 @@
 
                 <input id="titulo" type="text" placeholder="Titulo da tarefa"
                     class="pl-3 h-10 border-2 border-slate-400 focus:border-purple-600 duration-150 rounded outline-none mb-4"
-                    required />
+                    required/>
 
                 <label for="descricao" class="uppercase text-xs font-bold mb-2 block">Descrição:</label>
+
                 <textarea id="descricao" placeholder="Descreva a tarefa"
                     class="pl-3 h-10 border-2 border-slate-400 focus:border-purple-600 duration-150 rounded outline-none mb-4"
                     required></textarea>
@@ -52,11 +55,56 @@
 
         </div>
 
+         <div id="form-editar"
+            class="w-100 p-4 rounded-lg bg-violet-100 fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 invisible duration-200 delay-200">
 
+            <div class="flex justify-end">
+                <box-icon onclick="fecharFormEditar()" name='x-circle' class="cursor-pointer"></box-icon>
+            </div>
+
+            <form onsubmit="editarTarefa()" class="flex flex-col">
+
+                <input type="hidden" id="idEdicao"/>
+
+                <label for="tituloEdicao" class="uppercase text-xs font-bold mb-2 block">Editar título:</label>
+
+                <input id="tituloEdicao" type="text" placeholder="Editar titulo da tarefa"
+                    class="pl-3 h-10 border-2 border-slate-400 focus:border-purple-600 duration-150 rounded outline-none mb-4"/>
+
+                <label for="descricaoEdicao" class="uppercase text-xs font-bold mb-2 block">Editar a descriçao da tarefa:</label>
+                <textarea id="descricaoEdicao" placeholder="Descriçao da tarefa"
+                    class="pl-3 h-10 border-2 border-slate-400 focus:border-purple-600 duration-150 rounded outline-none mb-4">
+                </textarea>
+
+                <button type="submit"
+                    class="w-full h-10 rounded bg-purple-400 hover:bg-indigo-600 duration-200 hover:text-white mb-4">Finalizar edição
+                </button>
+
+            </form>
 
         </div>
 
     </main>
+
+    <footer class="flex justify-between items-center py-4 px-20 bg-gradient-to-r from-violet-600 to-rose-200 gap-20">
+        <div class="py-4">
+        <h1>About us</h1>
+        <br>
+        <p>This is a project from Digital College GT04.</p>
+        </div>
+        <div class="py-4">
+            <h1>Legal & Compliance</h1>
+            <br>
+            <p>© 2026 Annotes. Todos os direitos reservados.</p>
+            <p class="w-100">Nenhum dado coletado. Todas as informações na nuvem são criptografadas de ponta a ponta. Nenhuma informação de usuário é compartilhada com terceiros. Annotações deletadas não são mantidas. Todos os direitos do usuário integrais.</p>
+        </div>
+        <nav class="flex flex-col text-blue-950">
+        <a href="">Github</a>
+        <a href="">Discord</a>
+        <a href="">LinkedIn</a>
+        </nav>
+
+    </footer>
 
     <script src="index.js"></script>
 </body>
